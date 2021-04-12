@@ -29,5 +29,8 @@ module.exports = async (deployer, network, accounts) => {
 
     await compoundInstance.redeemCErc20Tokens(CDAI, DAI, tokenBalance.toString(), { from: owner })
 
+    tokenBalance = await compoundInstance.getTokenBalance(CDAI);
+    console.log('CDAI balance' + tokenBalance)
+
   }
 }
